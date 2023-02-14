@@ -1,0 +1,11 @@
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="is_occupied">Status:</label>
+      <select class="form-control" id="is_occupied" name="is_occupied">
+        <option value="True" {% if parking_space.is_occupied %}selected{% endif %}>Occupied</option>
+        <option value="False" {% if not parking_space.is_occupied %}selected{% endif %}>Available</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>

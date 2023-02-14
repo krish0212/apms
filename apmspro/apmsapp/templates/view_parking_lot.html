@@ -1,0 +1,13 @@
+{% block content %}
+  <h2>{{ parking_lot }}</h2>
+  <table>
+    {% for row in parking_lot.get_slots %}
+      <tr>
+        {% for slot in row %}
+          <td>{% if slot %} Occupied {% else %} Empty {% endif %}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  <a href="{% url 'parking_lots' %}">Back to Parking Lots</a>
+{% endblock %}

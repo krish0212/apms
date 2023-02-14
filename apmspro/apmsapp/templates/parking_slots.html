@@ -1,0 +1,15 @@
+<table>
+  {% for row in matrix %}
+    <tr>
+      {% for slot in row %}
+        {% if slot.is_occupied %} 
+          occupied 
+        {% else %}
+          available
+        {% endif %}
+          {{ slot.row }}, {{ slot.column }}
+        </td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+</table>
